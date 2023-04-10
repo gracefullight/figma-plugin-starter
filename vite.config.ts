@@ -1,11 +1,11 @@
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import reactRefresh from "@vitejs/plugin-react-refresh";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   root: "./ui-src",
-  plugins: [reactRefresh(), viteSingleFile()],
+  plugins: [react(), viteSingleFile()],
   build: {
     target: "esnext",
     assetsInlineLimit: 100000000,
