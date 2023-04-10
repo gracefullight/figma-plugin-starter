@@ -1,3 +1,5 @@
+import App from './App';
+
 import {
   createTheme,
   css,
@@ -5,15 +7,12 @@ import {
   GlobalStyles,
   ThemeProvider,
 } from '@mui/material';
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
 
 const theme = createTheme();
 const globalStyles = css``;
 
-ReactDOM.render(
+render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <GlobalStyles styles={globalStyles} />

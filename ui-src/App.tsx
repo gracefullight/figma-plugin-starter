@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -9,6 +8,7 @@ import {
   Typography,
   Stack,
 } from '@mui/material';
+import { useState } from 'react';
 
 function App() {
   const [amount, setAmount] = useState(0);
