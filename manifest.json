@@ -1,8 +1,8 @@
 {
-  "name": "React Sample",
-  "id": "",
+  "name": "Figma Plugin Starter",
+  "id": "dev.gracefullight.figma-plugin-starter",
   "api": "1.0.0",
-  "editorType": ["figma", "figjam"],
+  "editorType": ["figma"],
   "permissions": [],
   "main": "dist/code.js",
   "ui": "dist/index.html"
