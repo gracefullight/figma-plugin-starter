@@ -1,45 +1,58 @@
-import React, { useRef } from "react";
-import logoPng from "./logo.png";
-import logoSvg from "./logo.svg?raw";
-import Logo from "./Logo";
-import "./App.css";
+import React, { useState } from 'react';
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  Typography,
+  Stack,
+} from '@mui/material';
 
 function App() {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [amount, setAmount] = useState(0);
 
   const onCreate = () => {
-    const count = Number(inputRef.current?.value || 0);
     parent.postMessage(
-      { pluginMessage: { type: "create-rectangles", count } },
-      "*"
+      { pluginMessage: { type: 'create-rectangles', count: amount } },
+      '*'
     );
   };
 
   const onCancel = () => {
-    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
+    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
   };
 
   return (
-    <main>
-      <header>
-        <img src={logoPng} />
-        &nbsp;
-        <img src={`data:image/svg+xml;utf8,${logoSvg}`} />
-        &nbsp;
-        <Logo />
-        <h2>Rectangle Creator</h2>
-      </header>
-      <section>
-        <input id="input" type="number" min="0" ref={inputRef} />
-        <label htmlFor="input">Rectangle Count</label>
-      </section>
-      <footer>
-        <button className="brand" onClick={onCreate}>
-          Create
-        </button>
-        <button onClick={onCancel}>Cancel</button>
-      </footer>
-    </main>
+    <Container>
+      <Stack spacing={4}>
+        <Stack component="header" spacing={8}>
+          <Typography variant="h4">Rectangle Creator</Typography>
+        </Stack>
+        <Box>
+          <FormControl fullWidth>
+            <InputLabel htmlFor="input">Amount</InputLabel>
+            <OutlinedInput
+              id="input"
+              type="number"
+              inputProps={{ min: 0 }}
+              onChange={(e) => {
+                setAmount(Number(e.target.value));
+              }}
+            />
+          </FormControl>
+        </Box>
+        <Stack component="footer" direction="row" spacing={4}>
+          <Button color="primary" onClick={onCreate}>
+            Create
+          </Button>
+          <Button color="warning" onClick={onCancel}>
+            Cancel
+          </Button>
+        </Stack>
+      </Stack>
+    </Container>
   );
 }
 
