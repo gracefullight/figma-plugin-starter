@@ -1,4 +1,4 @@
-import App from './App';
+import App from "./App";
 
 import {
   createTheme,
@@ -6,8 +6,8 @@ import {
   CssBaseline,
   GlobalStyles,
   ThemeProvider,
-} from '@mui/material';
-import { render } from 'react-dom';
+} from "@mui/material";
+import { render } from "react-dom";
 
 const theme = createTheme();
 const globalStyles = css``;
@@ -18,5 +18,5 @@ render(
     <GlobalStyles styles={globalStyles} />
     <App />
   </ThemeProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

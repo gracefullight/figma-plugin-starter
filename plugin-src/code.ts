@@ -1,7 +1,7 @@
 figma.showUI(__html__, { themeColors: true, width: 400, height: 400 });
 
 figma.ui.onmessage = (msg) => {
-  if (msg.type === 'create-rectangles') {
+  if (msg.type === "create-rectangles") {
     const nodes = [];
 
     for (let i = 0; i < msg.count; i++) {
@@ -13,7 +13,7 @@ figma.ui.onmessage = (msg) => {
       const g = Math.floor(Math.random() * 100 + 155);
       const b = Math.floor(Math.random() * 100 + 155);
       rect.fills = [
-        { type: 'SOLID', color: { r: r / 255, g: g / 255, b: b / 255 } },
+        { type: "SOLID", color: { r: r / 255, g: g / 255, b: b / 255 } },
       ];
       figma.currentPage.appendChild(rect);
       nodes.push(rect);

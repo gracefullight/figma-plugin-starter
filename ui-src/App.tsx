@@ -7,21 +7,21 @@ import {
   OutlinedInput,
   Typography,
   Stack,
-} from '@mui/material';
-import { useState } from 'react';
+} from "@mui/material";
+import { useState } from "react";
 
 function App() {
   const [amount, setAmount] = useState(0);
 
   const onCreate = () => {
     parent.postMessage(
-      { pluginMessage: { type: 'create-rectangles', count: amount } },
-      '*'
+      { pluginMessage: { type: "create-rectangles", count: amount } },
+      "*"
     );
   };
 
   const onCancel = () => {
-    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
   };
 
   return (
