@@ -21,6 +21,15 @@ figma.ui.onmessage = (msg) => {
 
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
+  } else if (msg.type === "select-nodes") {
+    if (figma.currentPage.selection.length === 0) {
+      figma.notify("Please select at least one node");
+      return figma.closePlugin();
+    }
+
+    for (const node of figma.currentPage.selection) {
+      console.log(node);
+    }
   }
 
   figma.closePlugin();

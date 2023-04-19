@@ -24,6 +24,10 @@ function App() {
     parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
   };
 
+  const onSelect = () => {
+    parent.postMessage({ pluginMessage: { type: "select-nodes" } }, "*");
+  };
+
   return (
     <Container>
       <Stack spacing={4}>
@@ -49,6 +53,9 @@ function App() {
           </Button>
           <Button color="warning" onClick={onCancel}>
             Cancel
+          </Button>
+          <Button color="success" onClick={onSelect}>
+            Select
           </Button>
         </Stack>
       </Stack>
