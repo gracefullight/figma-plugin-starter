@@ -24,9 +24,7 @@ module.exports = {
       version: "detect",
     },
     "import/resolver": {
-      typescript: {
-        project: ["plugin-src/tsconfig.json", "ui-src/tsconfig.json"],
-      },
+      typescript: {},
     },
   },
   plugins: ["react", "@typescript-eslint"],
