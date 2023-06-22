@@ -1,5 +1,3 @@
-import App from "./App";
-
 import {
   createTheme,
   css,
@@ -8,6 +6,8 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { render } from "react-dom";
+
+import App from "./App";
 
 const theme = createTheme();
 const globalStyles = css``;
