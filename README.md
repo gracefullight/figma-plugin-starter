@@ -7,13 +7,13 @@ This is a preset for creating Figma plugins using React and esbuild. The starter
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- [Yarn](https://yarnpkg.com/) (v3.5.0 or higher)
+- [Pnpm](https://pnpm.io/) (v8.6.3 or higher)
 
 ### Installation
 
 1. Clone this repository: `git clone https://github.com/gracefullight/figma-plugin-starter.git`
 2. Navigate into the project directory: `cd figma-plugin-starter`
-3. Install dependencies: `yarn install`
+3. Install dependencies: `pnpm install`
 
 ### Usage
 
@@ -22,7 +22,7 @@ This is a preset for creating Figma plugins using React and esbuild. The starter
 To start the development server, run:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 This command will start the following processes concurrently:
@@ -38,7 +38,7 @@ Once the server is up and running, open Figma and navigate to Plugins > Developm
 To build the plugin, run:
 
 ```bash
-yarn build
+pnpm build
 ```
 
 This command will create a production-ready version of the plugin in the `dist` directory.
